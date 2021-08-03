@@ -1,0 +1,158 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+a{
+    text-decoration: none;
+}
+
+.padre{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+header{
+    background: url(../images/viaje.jpg);
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 10px 0;
+}
+
+    .menu{
+        background-color: rgba(0, 0, 0, 0.1);
+        display: flex;
+        padding: 0;
+        height: auto;
+        border-bottom: 3px solid red;
+    }
+
+        .logo{
+            height: auto;
+            flex: 1 1 auto;
+            text-align: center;
+        }
+
+        .nav{
+            height: auto;
+            display: flex;
+            flex: 2 1 auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .nav a{
+                padding: 0px 10px;
+                text-decoration: none;
+            }
+
+            .nav a:hover{
+                color: tomato;
+            }
+
+            .nav i{
+                padding: 0 5px;
+            }
+
+        .sociales{
+            height: auto;
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .sociales a{
+                padding: 0 25px;
+                color: red;
+            }
+
+            .sociales a:hover{
+                color: antiquewhite;
+            }
+
+.orden{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+    .orden h1{
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .orden form{
+        text-align: center;
+    }
+
+    .newBoton{
+        display: inline-block;
+    }
+
+    .pedido{
+        display: flex;
+        justify-content: center;
+    }
+
+    .pedido .pizzas{
+        width: auto;
+        margin-top: 45px;
+    }
+
+    .pedido .pizza{
+        margin-bottom: 15px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* border: 5px solid red; */
+        box-shadow: 0px 0px 5px 1px black;
+    }
+
+.pedido{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+    .seleccion{
+        border: 2px solid gray;
+        width: 850px;
+        box-shadow: 0px 0px 5px 1px black;
+        height: auto;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    .seleccion .msj{
+        display: inline-block;
+    }
+
+.imagenes{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.ingredientes{
+    display: flex;
+}
+
+    .sabores{
+        flex: 2 1 auto
+    }
+
+    .imagenes{
+        flex: 1 1 auto;
+    }
+
+    .sabor{
+        padding: 10px;
+    }
