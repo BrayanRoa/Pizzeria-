@@ -73,11 +73,13 @@ function getData(){
             
             templateOpciones.querySelector(".span1").setAttribute("id", contador)
             templateOpciones.querySelector(".imagen1").setAttribute("id", `imagen${contador}`)
+            templateOpciones.querySelector(".pizza1").setAttribute("name", `select`)
             templateOpciones.querySelector(".pizza1").setAttribute("onclick",`setName(sabor${contador}, ${contador}), setImagen(sabor${contador}, ${contador})`)
             templateOpciones.querySelector(".pizza1").setAttribute("id",`sabor${contador++}`)
 
             templateOpciones.querySelector(".span2").setAttribute("id", contador)
             templateOpciones.querySelector(".imagen2").setAttribute("id", `imagen${contador}`)
+            templateOpciones.querySelector(".pizza2").setAttribute("name",`select`)
             templateOpciones.querySelector(".pizza2").setAttribute("onclick", `setNameTwo(sabor${contador}, ${contador}), setImagenTwo(sabor${contador}, ${contador})`)
             templateOpciones.querySelector(".pizza2").setAttribute("id",`sabor${contador++}`)
 
@@ -94,13 +96,19 @@ function getData(){
             }
             const clone = templateOpciones.cloneNode(true)
             fragment.appendChild(clone)
+            
             templateOpciones.querySelector(".pizza1").innerHTML = ""
             templateOpciones.querySelector(".pizza2").innerHTML = ""
         }
-        // const btnEnviar = document.getElementById("boton")
-        // btnEnviar.innerHTML = `<button id="btnC">Cargar Opciones</button>`
+        const boton = document.createElement("input")
+        boton.setAttribute("value", "Calcular Factura")
+        boton.setAttribute("type", "submit")
+        boton.classList.add("btnEnviar")
+
+        fragment.appendChild(boton)
         document.getElementById("pedido").appendChild(fragment)
     })
+    
 }
 
 
@@ -137,4 +145,14 @@ function setImagenTwo(select, i){
             }
         }
     })
+}
+
+function getFactura(){
+    let url = "https://programacion-web---i-sem-2019.gitlab.io/persistencia/json_web/json/pizzeria.json"
+
+    let paramst = new URLSearchParams(location.search)
+
+    const select = paramst.getAll("select")
+
+    console.log(select)
 }
